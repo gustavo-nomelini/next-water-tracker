@@ -2,6 +2,66 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Colaborando!
 
+## Initial Setup:
+
+```
+
+yarn create next-app name-of-your-app
+yarn add --dev prettier prettier-plugin-tailwindcss
+
+touch .prettier
+{
+"plugins": ["prettier-plugin-tailwindcss"]
+}
+
+yarn add @headlessui/react
+yarn add @heroicons/react
+
+
+```
+
+## Folder Structure for Next.js APP
+
+```
+
+water-tracker/
+│── public/ # Static assets (icons, images, etc.)
+│── src/
+│ ├── app/ # Next.js App Router (Routing)
+│ │ ├── api/ # API Routes (Server Actions)
+│ │ │ ├── water/ # API for logging water consumption
+│ │ │ ├── users/ # API for user authentication
+│ │ ├── dashboard/ # Dashboard page
+│ │ │ ├── page.tsx # Dashboard main component
+│ │ ├── history/ # Water consumption history page
+│ │ │ ├── page.tsx # History page
+│ │ ├── settings/ # User settings (goal, notifications)
+│ │ │ ├── page.tsx # Settings page
+│ │ ├── layout.tsx # Main layout (navbar, sidebar)
+│ │ ├── page.tsx # Home page (Landing page)
+│ │ ├── loading.tsx # Loading state (Suspense fallback)
+│ │ ├── error.tsx # Error boundary for app
+│ ├── components/ # Reusable UI components
+│ │ ├── ui/ # Generic UI components (Button, Card, etc.)
+│ │ ├── layout/ # Layout components (Header, Sidebar, etc.)
+│ │ ├── dashboard/ # Components specific to dashboard
+│ │ ├── tracking/ # Components for water tracking
+│ │ ├── charts/ # Components for progress visualization
+│ │ ├── forms/ # Form-related components
+│ │ ├── notifications/ # Notifications and reminders
+│ ├── hooks/ # Custom React hooks
+│ ├── lib/ # Utilities (helpers, fetchers, etc.)
+│ ├── context/ # Global context providers (User, Theme, etc.)
+│ ├── styles/ # Tailwind & global styles
+│ ├── types/ # TypeScript interfaces & types
+│ ├── utils/ # Helper functions (date formatting, etc.)
+│── .env.local # Environment variables
+│── package.json # Dependencies and scripts
+│── tailwind.config.js # Tailwind CSS configuration
+│── tsconfig.json # TypeScript configuration
+│── yarn.lock # Yarn dependency lock file
+```
+
 ## Getting Started
 
 First, run the development server:
