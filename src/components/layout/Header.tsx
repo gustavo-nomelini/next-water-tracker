@@ -182,6 +182,8 @@ export default function Header() {
           </Link>
         </div>
       </nav>
+
+      {/* Mobile Navigation Menu */}
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
@@ -190,7 +192,11 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link
+              href="/"
+              className="-m-1.5 p-1.5"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <span className="sr-only">Your Company</span>
               <img
                 alt="Company Logo"
@@ -215,6 +221,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:bg-gray-800 hover:text-gray-200"
+                    onClick={() => setMobileMenuOpen(false)} // ✅ Close menu when clicked
                   >
                     {item.name}
                   </Link>
@@ -224,6 +231,7 @@ export default function Header() {
                 <Link
                   href="/login"
                   className="-mx-3 block rounded-lg bg-indigo-600 px-3 py-2.5 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:bg-indigo-500 hover:text-gray-200"
+                  onClick={() => setMobileMenuOpen(false)} // ✅ Close menu when clicking login
                 >
                   Log in
                 </Link>
